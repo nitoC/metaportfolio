@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Bridge from "./components/Bridge";
 import Dashboard from "./components/Dashboard";
