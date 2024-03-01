@@ -826,6 +826,9 @@ header-text {
   .header-mobile-container {
     display: block;
   }
+  .dash-footer-content {
+    padding: 1rem;
+  }
   .explore-token-background {
     background-image: url("/exploresmall.PNG");
     width: 100%;
