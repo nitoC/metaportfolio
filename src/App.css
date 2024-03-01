@@ -858,6 +858,9 @@ header-text {
   }
 }
 @media (max-width: 555px) {
+  .swap-content {
+    padding: 0;
+  }
   :root {
     font-size: 14px;
   }
