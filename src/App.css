@@ -861,6 +861,9 @@ header-text {
   .swap-content {
     padding: 0;
   }
+  .bridge {
+    padding-bottom: 4rem;
+  }
   :root {
     font-size: 14px;
   }
