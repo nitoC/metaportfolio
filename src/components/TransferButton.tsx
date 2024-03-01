@@ -1,4 +1,3 @@
-import React from "react";
 import { RxCaretDown } from "react-icons/rx";
 
 const TransferButton = ({

@@ -19,6 +19,7 @@ const Sidebar = ({
     console.log("in side");
     handleElement(componentName);
   };
+  console.log(ele);
 
   return (
     <div className="sidebar">
