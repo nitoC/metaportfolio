@@ -1,0 +1,40 @@
+:root {
+  font-family: "Euclid Circular B", sans-serif;
+  --blue: #1098fc;
+  --blue-hover: #0376c9;
+  --card-background: rgb(30 31 37);
+  --card-border-radius: 1rem;
+  --border-color: #3b4046;
+  --input-background-color: rgb(51 65 85);
+  --border-card: rgb(71 85 105);
+  --back: #101213;
+  --color: white;
+}
+html {
+  background-color: var(--back);
+  color: var(--color);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+input,
+textarea {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+}
+button {
+  background-color: inherit;
+  font: inherit;
+  outline: none;
+  border: none;
+  color: inherit;
+}
+body {
+  width: 100vw;
+}
