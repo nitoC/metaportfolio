@@ -670,7 +670,7 @@ header-text {
   align-items: center;
 }
 .explore-token-background {
-  background-image: url("./exploreFull.PNG");
+  background-image: url("/exploreFull.PNG");
   height: 384px;
   width: 100%;
   aspect-ratio: 1100.39/384;
@@ -762,7 +762,7 @@ header-text {
     margin: auto;
   }
   .explore-token-background {
-    background-image: url("./exploremedium.PNG");
+    background-image: url("/exploremedium.PNG");
     width: 100%;
     aspect-ratio: 700.39/376;
   }
@@ -801,7 +801,7 @@ header-text {
 }
 @media (max-width: 1300px) {
   .explore-token-background {
-    background-image: url("./exploremedium.PNG");
+    background-image: url("/exploremedium.PNG");
   }
 }
 @media (max-width: 767px) {
@@ -824,7 +824,7 @@ header-text {
     display: block;
   }
   .explore-token-background {
-    background-image: url("./exploresmall.PNG");
+    background-image: url("/exploresmall.PNG");
     width: 100%;
 
     aspect-ratio: 500.39/376;
@@ -874,7 +874,7 @@ header-text {
     background-color: inherit !important;
   }
   .explore-token-background {
-    background-image: url("./explorefinalsmall.PNG") !important;
+    background-image: url("/explorefinalsmall.PNG") !important;
     width: 100%;
     background-size: contain;
     background-repeat: no-repeat !important;
@@ -891,7 +891,7 @@ header-text {
     padding-left: 0;
   }
   .explore-token-background {
-    background-image: url("./exploremediumsmall.PNG");
+    background-image: url("/exploremediumsmall.PNG");
     width: 100%;
 
     aspect-ratio: 500.39/376;
