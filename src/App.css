@@ -808,6 +808,9 @@ header-text {
   .sidebar {
     display: none;
   }
+  .second-dash-container {
+    border: none;
+  }
   .bridge {
     padding-left: 0;
   }

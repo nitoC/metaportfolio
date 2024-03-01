@@ -90,10 +90,7 @@ const MobileSidebar = ({
             <Bridgeicon />
             <div className="icon-text">Bridge</div>
           </div>
-          <div
-            className={`icon ${ele === "Stake" ? "icon-active" : ""}`}
-            onClick={() => handleIconClick("Stake")}
-          >
+          <div className={`icon ${ele === "Stake" ? "icon-active" : ""}`}>
             <Stakeicon />
             <div className="icon-text">Stake</div>
           </div>

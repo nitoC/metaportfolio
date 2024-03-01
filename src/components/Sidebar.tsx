@@ -51,7 +51,7 @@ const Sidebar = ({
           <Bridgeicon />
           <div className="icon-text">Bridge</div>
         </div>
-        <div className="icon" onClick={() => handleClick("Stake")}>
+        <div className="icon">
           <Stakeicon />
           <div className="icon-text">Stake</div>
         </div>
