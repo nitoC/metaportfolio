@@ -5,6 +5,7 @@ import { RxCaretDown } from "react-icons/rx";
 import { RiArrowUpDownLine } from "react-icons/ri";
 import { IoMdCheckmark } from "react-icons/io";
 import MobileHeader from "./MobileHeader";
+import SearchSwap from "./SearchSwap";
 
 const options = [
   {
@@ -32,12 +33,37 @@ const Swap = ({
   ele: string;
   handleElement: (arg: string) => void;
 }) => {
+  //handlers
   const [value, setvalue] = useState({
     name: "Ethereum",
     img: "./ethereum.png",
   });
+
+  const [firstToken, setfirstToken] = useState(false);
+  const [displayToken, setdisplayToken] = useState(false);
+  const [secondToken, setsecondToken] = useState(false);
+  const [displayToken2, setdisplayToken2] = useState(false);
   const [optionsval, setoptionsVal] = useState(false);
 
+  const handleModal = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    // Check if the click occurred within the "swap-from" div
+    if (
+      (event.target as HTMLInputElement).classList.contains("swap-from-left") ||
+      (event.target as HTMLInputElement).classList.contains("swap-to-left") ||
+      (event.target as HTMLInputElement).classList.contains("swap-from-icon") ||
+      (event.target as HTMLInputElement).classList.contains("swap-from-icon") ||
+      (event.target as HTMLInputElement).classList.contains(
+        "search-swap-wrapper"
+      ) ||
+      (event.target as HTMLInputElement).classList.contains("swap-to")
+    ) {
+      // If not, handle the modal
+
+      return;
+    }
+    setfirstToken(false);
+    setsecondToken(false);
+  };
   const handleOptions = () => {
     setoptionsVal(!optionsval);
   };
@@ -47,7 +73,7 @@ const Swap = ({
   };
 
   return (
-    <div className="swap">
+    <div onClick={(e) => handleModal(e)} className="swap">
       <HeadingOrs type="Swap" />
       <MobileHeader ele={ele} handleElement={handleElement} />
       <div className="swap-content">
@@ -82,22 +108,29 @@ const Swap = ({
           </div>
           <div className="swap-container">
             <div className="swap-text">Swap from</div>
-            <div className="swap-from">
-              <div className="swap-from-left">
-                <div className="swap-from-img-container"></div>
-                Sele...
-                <span className="swap-from-icon">
-                  <RxCaretDown />
-                </span>
+            {!firstToken ? (
+              <div className="swap-from">
+                <div
+                  onClick={() => setfirstToken(true)}
+                  className="swap-from-left"
+                >
+                  <div className="swap-from-img-container"></div>
+                  Sele...
+                  <span className="swap-from-icon">
+                    <RxCaretDown />
+                  </span>
+                </div>
+                <div className="swap-from-right">
+                  <input
+                    type="number"
+                    className="swap-from-input"
+                    placeholder="0"
+                  />
+                </div>
               </div>
-              <div className="swap-from-right">
-                <input
-                  type="number"
-                  className="swap-from-input"
-                  placeholder="0"
-                />
-              </div>
-            </div>
+            ) : (
+              <SearchSwap />
+            )}
           </div>
           {/* arrow up down */}
           <div className="inflow-icon">
@@ -106,15 +139,31 @@ const Swap = ({
           {/* swap to */}
           <div className="swap-container">
             <div className="swap-text">Swap to</div>
-            <div className="swap-to">
-              <span className="swap-to-left">
-                <div className="swap-from-img-container"></div>
-                Select a token
-              </span>
-              <span className="swap-from-icon">
-                <RxCaretDown />
-              </span>
-            </div>
+            {!secondToken ? (
+              <div
+                onClick={() => {
+                  setsecondToken(true);
+                  console.log(secondToken);
+                }}
+                className="swap-to"
+              >
+                <span
+                  onClick={() => {
+                    setsecondToken(true);
+                    console.log(secondToken);
+                  }}
+                  className="swap-to-left"
+                >
+                  <div className="swap-from-img-container"></div>
+                  Select a token
+                </span>
+                <span className="swap-from-icon">
+                  <RxCaretDown />
+                </span>
+              </div>
+            ) : (
+              <SearchSwap />
+            )}
           </div>
 
           {/* advanced */}

@@ -13,11 +13,54 @@
   color: var(--blue);
   border-right: 1px solid var(--blue);
 }
+/* swap */
+.search-swap-container {
+  border: 1px solid var(--border-card);
+  border-radius: var(--card-border-radius);
+  height: 3.875rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-left: 1rem;
+}
+.search-swap-icon {
+  font-size: 2rem;
+  color: var(--border-card);
+}
+.search-swap-container input {
+  width: 80%;
+}
 .swap-network-container {
   overflow: initial;
 }
 .swap-network-container * {
   overflow: initial;
+}
+.token-img {
+  width: 32px;
+  height: 32px;
+}
+.token-dropdown {
+  border-radius: var(--card-border-radius);
+  border: 1px solid var(--border-color);
+  max-height: 20rem;
+}
+.token-name {
+  font-weight: 600;
+}
+.token {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid white;
+}
+.token-right {
+  display: flex;
+  flex-direction: column;
+}
+.token-abbr {
+  color: rgb(148 163 184);
 }
 .mobile-header {
   display: none;
