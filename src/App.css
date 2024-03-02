@@ -11,7 +11,8 @@
 }
 .icon-active {
   color: var(--blue);
-  border-right: 1px solid var(--blue);
+  border-right: 2px solid var(--blue);
+  color: white !important;
 }
 /* swap */
 .search-swap-container {
@@ -23,6 +24,7 @@
   align-items: center;
   padding-left: 1rem;
 }
+
 .search-swap-icon {
   font-size: 2rem;
   color: var(--border-card);
@@ -77,6 +79,35 @@
 .token-abbr {
   color: rgb(148 163 184);
 }
+
+.swap-connect-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swap-modal-card {
+  display: flex;
+  flex-direction: column !important;
+}
+.swap-modal-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.swap-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #0f172aa1;
+}
+.swap-modal-card-container {
+  position: absolute;
+  z-index: 2;
+}
+
 .mobile-header {
   display: none;
 }
@@ -146,6 +177,7 @@
   position: fixed;
   background-color: #1e1f25;
   min-height: 100vh;
+  z-index: 2;
 }
 .side-icons {
   margin-top: 0.5rem;

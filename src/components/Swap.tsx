@@ -6,6 +6,8 @@ import { RiArrowUpDownLine } from "react-icons/ri";
 import { IoMdCheckmark } from "react-icons/io";
 import MobileHeader from "./MobileHeader";
 import SearchSwap from "./SearchSwap";
+import Transfer from "./Transfer";
+import SwapModal from "./SwapModal";
 
 const options = [
   {
@@ -39,11 +41,16 @@ const Swap = ({
     img: "./ethereum.png",
   });
 
+  const [swapModal, setswapModal] = useState(true);
   const [firstToken, setfirstToken] = useState(false);
   //const [displayToken, setdisplayToken] = useState(false);
   const [secondToken, setsecondToken] = useState(false);
   //const [displayToken2, setdisplayToken2] = useState(false);
   const [optionsval, setoptionsVal] = useState(false);
+
+  const handleSwapModal = (val: boolean) => {
+    setswapModal(val);
+  };
 
   const handleModal = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     // Check if the click occurred within the "swap-from" div
@@ -74,6 +81,7 @@ const Swap = ({
 
   return (
     <div onClick={(e) => handleModal(e)} className="swap">
+      {swapModal && <SwapModal setSwap={handleSwapModal} />}
       <HeadingOrs type="Swap" />
       <MobileHeader ele={ele} handleElement={handleElement} />
       <div className="swap-content">

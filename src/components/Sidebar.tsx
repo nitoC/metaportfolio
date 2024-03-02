@@ -26,36 +26,57 @@ const Sidebar = ({
       <div className="logo-container">
         <img src="./metalogo.svg" alt="" className="logo" />
       </div>
-      <div className="side-icons">
-        <div className="icon" onClick={() => handleClick("Dashboard")}>
+      <div className={`side-icons`}>
+        <div
+          className={`icon ${ele == "Dashboard" && "icon-active"}`}
+          onClick={() => handleClick("Dashboard")}
+        >
           <DashIcon />
           <div className="icon-text">Dashboard</div>
         </div>
-        <div className="icon" onClick={() => handleClick("Explore")}>
+        <div
+          className={`icon ${ele == "Explore" && "icon-active"}`}
+          onClick={() => handleClick("Explore")}
+        >
           <Exploreicon />
           <div className="icon-text">Explore</div>
         </div>
-        <div className="icon" onClick={() => handleClick("Buy")}>
+        <div
+          className={`icon ${ele == "Buy" && "icon-active"}`}
+          onClick={() => handleClick("Buy")}
+        >
           <Buyicon />
           <div className="icon-text">Buy</div>
         </div>
-        <div className="icon" onClick={() => handleClick("Sell")}>
+        <div
+          className={`icon ${ele == "Sell" && "icon-active"}`}
+          onClick={() => handleClick("Sell")}
+        >
           <Sellicon />
           <div className="icon-text">Sell</div>
         </div>
-        <div className="icon" onClick={() => handleClick("Swap")}>
+        <div
+          className={`icon ${ele == "Swap" && "icon-active"}`}
+          onClick={() => handleClick("Swap")}
+        >
           <Swapicon />
           <div className="icon-text">Swap</div>
         </div>
-        <div className="icon" onClick={() => handleClick("Bridge")}>
+        <div
+          className={`icon ${ele == "Bridge" && "icon-active"}`}
+          onClick={() => handleClick("Bridge")}
+        >
           <Bridgeicon />
           <div className="icon-text">Bridge</div>
         </div>
-        <div className="icon">
+        <div className={`icon ${ele == "Stake" && "icon-active"}`}>
           <Stakeicon />
           <div className="icon-text">Stake</div>
         </div>
-        <div className="icon" onClick={() => handleClick("Transfer")}>
+        <div
+          className={`icon ${ele == "Transfer" && "icon-active"}`}
+          onClick={() => handleClick("Transfer")}
+        >
           <Sendicon />
           <div className="icon-text">Send & Receive</div>
         </div>
