@@ -27,6 +27,12 @@
   font-size: 2rem;
   color: var(--border-card);
 }
+.swap-card {
+  overflow: initial;
+}
+.swap-container {
+  overflow: initial;
+}
 .search-swap-container input {
   width: 80%;
 }
@@ -44,6 +50,15 @@
   border-radius: var(--card-border-radius);
   border: 1px solid var(--border-color);
   max-height: 20rem;
+  position: absolute;
+  bottom: -327px;
+  background-color: var(--card-background);
+  right: 0;
+  left: 0;
+}
+.search-swap-wrapper {
+  position: relative;
+  overflow: initial;
 }
 .token-name {
   font-weight: 600;
