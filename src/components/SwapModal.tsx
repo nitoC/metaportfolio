@@ -6,7 +6,7 @@ const SwapModal = ({ setSwap }: { setSwap: (swap: boolean) => void }) => {
       <div onClick={() => setSwap(false)} className="swap-modal-overlay"></div>
       <div className="transaction-card-container swap-modal-card-container">
         <div className="swap">
-          <div className="card-content">
+          <div className="swap-modal-content">
             <div className="swap-card swap-modal-card">
               <h3 className="trans-heading">
                 Please Connect Wallet to Proceed
