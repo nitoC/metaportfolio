@@ -6,7 +6,7 @@ import { RiArrowUpDownLine } from "react-icons/ri";
 import { IoMdCheckmark } from "react-icons/io";
 import MobileHeader from "./MobileHeader";
 import SearchSwap from "./SearchSwap";
-import Transfer from "./Transfer";
+
 import SwapModal from "./SwapModal";
 
 const options = [
