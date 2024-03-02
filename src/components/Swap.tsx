@@ -40,9 +40,9 @@ const Swap = ({
   });
 
   const [firstToken, setfirstToken] = useState(false);
-  const [displayToken, setdisplayToken] = useState(false);
+  //const [displayToken, setdisplayToken] = useState(false);
   const [secondToken, setsecondToken] = useState(false);
-  const [displayToken2, setdisplayToken2] = useState(false);
+  //const [displayToken2, setdisplayToken2] = useState(false);
   const [optionsval, setoptionsVal] = useState(false);
 
   const handleModal = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
