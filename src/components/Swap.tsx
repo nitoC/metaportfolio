@@ -41,6 +41,8 @@ const Swap = ({
     img: "./ethereum.png",
   });
 
+  const [swapFrom, setswapFrom] = useState("");
+  const [swapTo, setswapTo] = useState("");
   const [swapModal, setswapModal] = useState(true);
   const [firstToken, setfirstToken] = useState(false);
   //const [displayToken, setdisplayToken] = useState(false);

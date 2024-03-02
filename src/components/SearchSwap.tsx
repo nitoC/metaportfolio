@@ -7,9 +7,9 @@ const optionsTokens = [
     abbr: "Dai stable coin",
   },
   {
-    name: "Dodge",
-    img: "./optimism.png",
-    abbr: "Dodge coin",
+    name: "Shiba",
+    img: "./shib.png",
+    abbr: "Shiba coin",
   },
   {
     name: "Ethereum",
