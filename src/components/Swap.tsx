@@ -45,11 +45,29 @@ const Swap = ({
   //const [swapTo, setswapTo] = useState("");
   const [swapModal, setswapModal] = useState(true);
   const [firstToken, setfirstToken] = useState(false);
-  //const [displayToken, setdisplayToken] = useState(false);
+  const [displayToken, setdisplayToken] = useState<
+    string | { name: string; img: string }
+  >("");
   const [secondToken, setsecondToken] = useState(false);
-  //const [displayToken2, setdisplayToken2] = useState(false);
+  const [displayToken2, setdisplayToken2] = useState<
+    string | { name: string; img: string }
+  >("");
   const [optionsval, setoptionsVal] = useState(false);
 
+  // handle switch display options
+  const toggleOptions = () => {
+    setdisplayToken2(displayToken);
+    setdisplayToken(displayToken2);
+  };
+
+  const handleToken = (val: { name: string; img: string }, type: string) => {
+    if (type === "first") {
+      setdisplayToken(val);
+      return;
+    }
+    setdisplayToken2(val);
+  };
+  //handle modal for swap
   const handleSwapModal = (val: boolean) => {
     setswapModal(val);
   };
@@ -122,10 +140,18 @@ const Swap = ({
               <div className="swap-from">
                 <div
                   onClick={() => setfirstToken(true)}
-                  className="swap-from-left"
+                  className={`swap-from-left ${
+                    typeof displayToken !== "string" && "swap-token-active"
+                  }`}
                 >
-                  <div className="swap-from-img-container"></div>
-                  Sele...
+                  {typeof displayToken !== "string" && displayToken?.img ? (
+                    <img src={displayToken?.img} alt="" className="val-img" />
+                  ) : (
+                    <div className="swap-from-img-container"></div>
+                  )}
+                  {typeof displayToken !== "string" && displayToken.name
+                    ? displayToken.name
+                    : "Sele..."}
                   <span className="swap-from-icon">
                     <RxCaretDown />
                   </span>
@@ -139,12 +165,14 @@ const Swap = ({
                 </div>
               </div>
             ) : (
-              <SearchSwap />
+              <SearchSwap handleDisp={handleToken} type="first" />
             )}
           </div>
           {/* arrow up down */}
           <div className="inflow-icon">
-            <RiArrowUpDownLine />
+            <span onClick={toggleOptions} className="span-inflow">
+              <RiArrowUpDownLine />
+            </span>
           </div>
           {/* swap to */}
           <div className="swap-container">
@@ -162,17 +190,25 @@ const Swap = ({
                     setsecondToken(true);
                     console.log(secondToken);
                   }}
-                  className="swap-to-left"
+                  className={`swap-to-left ${
+                    typeof displayToken2 !== "string" && "swap-token-active"
+                  }`}
                 >
-                  <div className="swap-from-img-container"></div>
-                  Select a token
+                  {typeof displayToken2 !== "string" && displayToken2?.img ? (
+                    <img src={displayToken2?.img} alt="" className="val-img" />
+                  ) : (
+                    <div className="swap-from-img-container"></div>
+                  )}
+                  {typeof displayToken2 !== "string" && displayToken2.name
+                    ? displayToken2.name
+                    : " Select a token"}
                 </span>
                 <span className="swap-from-icon">
                   <RxCaretDown />
                 </span>
               </div>
             ) : (
-              <SearchSwap />
+              <SearchSwap handleDisp={handleToken} type="second" />
             )}
           </div>
 

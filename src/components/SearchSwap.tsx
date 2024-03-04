@@ -43,7 +43,18 @@ const optionsTokens = [
   },
 ];
 
-const SearchSwap = () =>
+type Token = {
+  name: string;
+  img: string;
+  abbr: string;
+};
+
+type SearchSwapProps = {
+  type: string;
+  handleDisp: (val: Token, type: string) => void;
+};
+
+const SearchSwap = ({ type, handleDisp }: SearchSwapProps) => {
   //{
   //   name,
   //   img,
@@ -53,40 +64,40 @@ const SearchSwap = () =>
   //   img: string;
   //   abbr: string;
   // }
-  {
-    return (
-      <div className="search-swap-wrapper">
-        <div className="search-swap-container">
-          <div className="search-swap-icon">
-            <IoSearchOutline />
-          </div>
-          <input
-            type="text"
-            className="swap-search-input"
-            placeholder="Search name or paste address"
-          />
+
+  return (
+    <div className="search-swap-wrapper">
+      <div className="search-swap-container">
+        <div className="search-swap-icon">
+          <IoSearchOutline />
         </div>
-        <div className="token-dropdown">
-          {optionsTokens.map((token, index) => {
-            return (
-              <div key={index} className="token">
-                <div className="token-left">
-                  <img
-                    src={token.img}
-                    alt="token image"
-                    className="token-img"
-                  />
-                </div>
-                <div className="token-right">
-                  <span className="token-name">{token.name}</span>
-                  <span className="token-abbr">{token.abbr}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <input
+          type="text"
+          className="swap-search-input"
+          placeholder="Search name or paste address"
+        />
       </div>
-    );
-  };
+      <div className="token-dropdown">
+        {optionsTokens.map((token, index) => {
+          return (
+            <div
+              key={index}
+              onClick={() => handleDisp(token, type)}
+              className="token"
+            >
+              <div className="token-left">
+                <img src={token.img} alt="token image" className="token-img" />
+              </div>
+              <div className="token-right">
+                <span className="token-name">{token.name}</span>
+                <span className="token-abbr">{token.abbr}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default SearchSwap;

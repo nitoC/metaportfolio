@@ -71,6 +71,7 @@
   align-items: center;
   padding: 0.5rem 0.75rem;
   border-bottom: 1px solid white;
+  cursor: pointer;
 }
 .token-right {
   display: flex;
@@ -404,6 +405,12 @@
   align-items: center;
   color: var(--input-background-color);
 }
+.swap-token-active {
+  color: white !important;
+}
+.span-inflow {
+  cursor: pointer;
+}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -480,11 +487,13 @@ input[type="number"] {
   width: 16px;
   aspect-ratio: 1/1;
 }
+
 .row-value-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
+  cursor: pointer;
 }
 .swap-option {
   padding: 0.5rem;
