@@ -1,6 +1,8 @@
+import { JsonRpcSigner } from "ethers";
 import { ethers } from "ethers";
 
 export const connectWallet = async (params: string) => {
+  console.log(params);
   if (window.ethereum === null) {
     console.log("Download Ethereum app");
   } else {
@@ -14,7 +16,9 @@ export const connectWallet = async (params: string) => {
     //   console.log(err, "in connect accounts");
     // }
     const provider = new ethers.BrowserProvider(window.ethereum);
-    console.log(await provider.getSigner());
+    const signer: JsonRpcSigner = await provider.getSigner();
+
+    console.log(signer.getAddress());
 
     // // Retry logic
     // let retries = 3;
