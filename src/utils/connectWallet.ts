@@ -1,4 +1,4 @@
-import { JsonRpcSigner } from "ethers";
+import { Eip1193Provider, JsonRpcSigner } from "ethers";
 import { ethers } from "ethers";
 
 export const connectWallet = async (params: string) => {
@@ -15,7 +15,9 @@ export const connectWallet = async (params: string) => {
     // } catch (err) {
     //   console.log(err, "in connect accounts");
     // }
-    const provider = new ethers.BrowserProvider(window.ethereum);
+    const provider = new ethers.BrowserProvider(
+      window.ethereum as Eip1193Provider
+    );
     const signer: JsonRpcSigner = await provider.getSigner();
 
     console.log(signer.getAddress());
