@@ -1,6 +1,7 @@
 import FirstCard from "./FirstCard";
 import Header from "./Header";
 import MobileHeader from "./MobileHeader";
+import { connectWallet } from "../utils/connectWallet";
 
 const vals = [
   {
@@ -54,7 +55,12 @@ const Dashboard = ({
             </div>
             <div className="first-intro-btns">
               <button className="watch-btn">Watch an address</button>
-              <button className="connect-btn">Connect MetaMask</button>
+              <button
+                onClick={() => connectWallet("connecting...")}
+                className="connect-btn"
+              >
+                Connect MetaMask
+              </button>
             </div>
           </div>
           <div className="left-img-container ">

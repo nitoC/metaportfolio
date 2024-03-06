@@ -152,8 +152,11 @@ const Swap = ({
                   {typeof displayToken !== "string" && displayToken.name
                     ? displayToken.name
                     : "Sele..."}
-                  <span className="swap-from-icon">
-                    <RxCaretDown />
+                  <span
+                    onClick={() => setfirstToken(true)}
+                    className="swap-from-icon"
+                  >
+                    <RxCaretDown onClick={() => setfirstToken(true)} />
                   </span>
                 </div>
                 <div className="swap-from-right">
