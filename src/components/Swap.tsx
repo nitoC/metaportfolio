@@ -152,8 +152,11 @@ const Swap = ({
                   {typeof displayToken !== "string" && displayToken.name
                     ? displayToken.name
                     : "Sele..."}
-                  <span className="swap-from-icon">
-                    <RxCaretDown />
+                  <span
+                    onClick={() => setfirstToken(true)}
+                    className="swap-from-icon"
+                  >
+                    <RxCaretDown onClick={() => setfirstToken(true)} />
                   </span>
                 </div>
                 <div className="swap-from-right">
@@ -165,7 +168,16 @@ const Swap = ({
                 </div>
               </div>
             ) : (
-              <SearchSwap handleDisp={handleToken} type="first" />
+              <SearchSwap
+                firstToken={
+                  displayToken2 &&
+                  (displayToken2 as { name: string; img: string }).name
+                    ? (displayToken2 as { name: string; img: string }).name
+                    : ""
+                }
+                handleDisp={handleToken}
+                type="first"
+              />
             )}
           </div>
           {/* arrow up down */}
@@ -208,7 +220,16 @@ const Swap = ({
                 </span>
               </div>
             ) : (
-              <SearchSwap handleDisp={handleToken} type="second" />
+              <SearchSwap
+                firstToken={
+                  displayToken &&
+                  (displayToken as { name: string; img: string }).name
+                    ? (displayToken as { name: string; img: string }).name
+                    : ""
+                }
+                handleDisp={handleToken}
+                type="second"
+              />
             )}
           </div>
 
