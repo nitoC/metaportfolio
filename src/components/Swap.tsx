@@ -168,7 +168,16 @@ const Swap = ({
                 </div>
               </div>
             ) : (
-              <SearchSwap handleDisp={handleToken} type="first" />
+              <SearchSwap
+                firstToken={
+                  displayToken2 &&
+                  (displayToken2 as { name: string; img: string }).name
+                    ? (displayToken2 as { name: string; img: string }).name
+                    : ""
+                }
+                handleDisp={handleToken}
+                type="first"
+              />
             )}
           </div>
           {/* arrow up down */}
@@ -211,7 +220,16 @@ const Swap = ({
                 </span>
               </div>
             ) : (
-              <SearchSwap handleDisp={handleToken} type="second" />
+              <SearchSwap
+                firstToken={
+                  displayToken &&
+                  (displayToken as { name: string; img: string }).name
+                    ? (displayToken as { name: string; img: string }).name
+                    : ""
+                }
+                handleDisp={handleToken}
+                type="second"
+              />
             )}
           </div>
 

@@ -1,6 +1,6 @@
 import { IoSearchOutline } from "react-icons/io5";
 
-const optionsTokens = [
+let optionsTokens = [
   {
     name: "Dai",
     img: "./dai.png",
@@ -51,10 +51,11 @@ type Token = {
 
 type SearchSwapProps = {
   type: string;
+  firstToken: string;
   handleDisp: (val: Token, type: string) => void;
 };
 
-const SearchSwap = ({ type, handleDisp }: SearchSwapProps) => {
+const SearchSwap = ({ type, handleDisp, firstToken }: SearchSwapProps) => {
   //{
   //   name,
   //   img,
@@ -65,6 +66,9 @@ const SearchSwap = ({ type, handleDisp }: SearchSwapProps) => {
   //   abbr: string;
   // }
 
+  if (firstToken != "" || firstToken.length > 1) {
+    optionsTokens = optionsTokens.filter((item) => item.name !== firstToken);
+  }
   return (
     <div className="search-swap-wrapper">
       <div className="search-swap-container">

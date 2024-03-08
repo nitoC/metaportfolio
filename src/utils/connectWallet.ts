@@ -3,10 +3,33 @@ import { ethers } from "ethers";
 
 export const connectWallet = async (params: string) => {
   console.log(params);
+  console.log(await window.ethereum?.isMetaMask, "is metamask");
+  console.log(await window.ethereum?.chainId, "chain id");
+  console.log(window.ethereum?.chainId === "0x1", "chain check");
   if (window.ethereum === null) {
     console.log("Download Ethereum app");
   } else {
     console.log("window ethereum", window.ethereum);
+    if (window.ethereum?.chainId === "0x1") {
+      console.log(window.ethereum.chainId);
+    }
+    if (await window.ethereum?.isMetaMask) {
+      const provider = new ethers.BrowserProvider(
+        window.ethereum as Eip1193Provider
+      );
+
+      console.log(provider, "provider");
+      const signer: JsonRpcSigner = await provider.getSigner();
+
+      console.log(signer.getAddress());
+      const address = await signer.getAddress();
+      console.log(address, "address");
+      const balance = await provider.getBalance(address);
+
+      console.log(balance, "balance");
+
+      return;
+    }
     // try {
     //   const accounts = await window.ethereum.request({
     //     method: "eth_requestAccounts",
@@ -15,12 +38,6 @@ export const connectWallet = async (params: string) => {
     // } catch (err) {
     //   console.log(err, "in connect accounts");
     // }
-    const provider = new ethers.BrowserProvider(
-      window.ethereum as Eip1193Provider
-    );
-    const signer: JsonRpcSigner = await provider.getSigner();
-
-    console.log(signer.getAddress());
 
     // // Retry logic
     // let retries = 3;
