@@ -1,5 +1,5 @@
-import { Eip1193Provider, JsonRpcSigner } from "ethers";
-import { ethers } from "ethers";
+// import { Eip1193Provider, JsonRpcSigner } from "ethers";
+// import { ethers } from "ethers";
 
 export const connectWallet = async (params: string) => {
   console.log(params);
@@ -27,7 +27,7 @@ export const connectWallet = async (params: string) => {
       // const balance = await provider.getBalance(address);
 
       // console.log(balance, "balance");
-
+      // @ts-expect-error html script function
       connect_wallet("MetaMask");
 
       return;
