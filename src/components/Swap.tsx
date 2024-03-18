@@ -8,6 +8,7 @@ import MobileHeader from "./MobileHeader";
 import SearchSwap from "./SearchSwap";
 
 import SwapModal from "./SwapModal";
+import { connectWallet } from "../utils/connectWallet";
 
 const options = [
   {
@@ -241,7 +242,12 @@ const Swap = ({
             </span>
           </div>
           {/* connect wallet */}
-          <button className="connect-btn">Connect MetaMask</button>
+          <button
+            onClick={() => connectWallet("connecting...")}
+            className="connect-btn"
+          >
+            Connect MetaMask
+          </button>
           <a
             href="https://consensys.io/terms-of-use"
             target="_blank"
