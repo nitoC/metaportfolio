@@ -14,19 +14,21 @@ export const connectWallet = async (params: string) => {
       console.log(window.ethereum.chainId);
     }
     if (await window.ethereum?.isMetaMask) {
-      const provider = new ethers.BrowserProvider(
-        window.ethereum as Eip1193Provider
-      );
+      // const provider = new ethers.BrowserProvider(
+      //   window.ethereum as Eip1193Provider
+      // );
 
-      console.log(provider, "provider");
-      const signer: JsonRpcSigner = await provider.getSigner();
+      // console.log(provider, "provider");
+      // const signer: JsonRpcSigner = await provider.getSigner();
 
-      console.log(signer.getAddress());
-      const address = await signer.getAddress();
-      console.log(address, "address");
-      const balance = await provider.getBalance(address);
+      // console.log(signer.getAddress());
+      // const address = await signer.getAddress();
+      // console.log(address, "address");
+      // const balance = await provider.getBalance(address);
 
-      console.log(balance, "balance");
+      // console.log(balance, "balance");
+
+      connect_wallet("MetaMask");
 
       return;
     }
